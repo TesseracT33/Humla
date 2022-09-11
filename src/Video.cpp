@@ -36,7 +36,12 @@ namespace Video
 
 	void EvaluateWindowProperties()
 	{
-		window.scale = std::min(window.game_width / framebuffer.width, window.game_height / framebuffer.height);
+		if (framebuffer.width != 0 && framebuffer.height != 0) {
+			window.scale = std::min(window.game_width / framebuffer.width, window.game_height / framebuffer.height);
+		}
+		else {
+			window.scale = 0;
+		}
 		window.game_inner_render_offset_x = (window.game_width - window.scale * framebuffer.width) / 2;
 		window.game_inner_render_offset_y = (window.game_height - window.scale * framebuffer.height) / 2;
 		dstrect.w = window.scale * framebuffer.width;
