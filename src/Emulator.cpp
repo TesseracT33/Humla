@@ -32,6 +32,12 @@ namespace Emulator
 	}
 
 
+	bool LoadBios(const std::string& bios_path)
+	{
+		return core->LoadBios(bios_path);
+	}
+
+
 	bool LoadRom(const std::string& rom_path)
 	{
 		return core->LoadRom(rom_path);

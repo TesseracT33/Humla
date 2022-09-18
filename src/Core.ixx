@@ -14,7 +14,7 @@ export struct Core
 	virtual unsigned GetNumberOfInputs() = 0;
 	virtual void Initialize() = 0;
 	virtual bool LoadBios(const std::string& path) = 0;
-	virtual bool LoadRom(const std::string& path) { return true; };
+	virtual bool LoadRom(const std::string& path) = 0;
 	virtual void LoadState() {};
 	virtual void NotifyNewAxisValue(unsigned player_index, unsigned action_index, int new_axis_value) {};
 	virtual void NotifyButtonPressed(unsigned player_index, unsigned action_index) = 0;

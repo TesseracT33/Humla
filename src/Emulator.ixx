@@ -17,6 +17,7 @@ namespace Emulator
 		void DisableAudio();
 		void EnableAudio();
 		std::shared_ptr<Core> GetCore();
+		bool LoadBios(const std::string& bios_path);
 		bool LoadRom(const std::string& rom_path);
 		void LoadState();
 		void LockFramerate();

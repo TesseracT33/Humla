@@ -18,6 +18,7 @@ namespace Frontend
 	export
 	{
 		bool Initialize(std::shared_ptr<Core> core);
+		void LoadBios(std::string bios_path);
 		void LoadGame(std::string rom_path);
 		void RunGui(bool boot_game_immediately = false);
 		void Shutdown();

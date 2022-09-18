@@ -99,6 +99,12 @@ namespace Frontend
 	}
 
 
+	void LoadBios(std::string bios_path)
+	{
+		Emulator::LoadBios(bios_path);
+	}
+
+
 	void LoadGame(std::string rom_path)
 	{
 		Emulator::LoadRom(rom_path);
