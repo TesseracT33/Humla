@@ -5,6 +5,7 @@ import Core;
 import <SDL.h>;
 
 import <chrono>;
+import <format>;
 import <iostream>;
 import <memory>;
 import <string>;
@@ -18,8 +19,8 @@ namespace Frontend
 	export
 	{
 		bool Initialize(std::shared_ptr<Core> core);
-		void LoadBios(std::string bios_path);
-		void LoadGame(std::string rom_path);
+		bool LoadBios(std::string bios_path);
+		bool LoadGame(std::string rom_path);
 		void RunGui(bool boot_game_immediately = false);
 		void Shutdown();
 	}

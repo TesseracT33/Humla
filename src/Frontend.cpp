@@ -99,15 +99,25 @@ namespace Frontend
 	}
 
 
-	void LoadBios(std::string bios_path)
+	bool LoadBios(std::string bios_path)
 	{
-		Emulator::LoadBios(bios_path);
+		if (!Emulator::LoadBios(bios_path)) {
+			UserMessage::Show(std::format("Could not load bios at path \"{}\"", bios_path),
+				UserMessage::Type::Warning);
+			return false;
+		}
+		return true;
 	}
 
 
-	void LoadGame(std::string rom_path)
+	bool LoadGame(std::string rom_path)
 	{
-		Emulator::LoadRom(rom_path);
+		if (!Emulator::LoadRom(rom_path)) {
+			UserMessage::Show(std::format("Could not load rom at path \"{}\"", rom_path),
+				UserMessage::Type::Warning);
+			return false;
+		}
+		return true;
 	}
 
 

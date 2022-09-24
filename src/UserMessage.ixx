@@ -14,7 +14,7 @@ namespace UserMessage
 	export
 	{
 		enum class Type { 
-			Unspecified, Success, Warning, Error, Fatal
+			Unspecified, Success, Info, Warning, Error, Fatal
 		};
 
 		void SetWindow(SDL_Window* sdl_window)
@@ -31,6 +31,7 @@ namespace UserMessage
 			std::string out_msg_prefix = [&] {
 				switch (type) {
 				case Type::Success: return "Success: ";
+				case Type::Info: return "Info: ";
 				case Type::Warning: return "Warning: ";
 				case Type::Error: return "Error: ";
 				case Type::Fatal: return "Fatal: ";
@@ -41,6 +42,7 @@ namespace UserMessage
 			auto sdl_msg_type = [&] {
 				switch (type) {
 				case Type::Success: return SDL_MESSAGEBOX_INFORMATION;
+				case Type::Info: return SDL_MESSAGEBOX_INFORMATION;
 				case Type::Warning: return SDL_MESSAGEBOX_WARNING;
 				case Type::Error: return SDL_MESSAGEBOX_ERROR;
 				case Type::Fatal: return SDL_MESSAGEBOX_ERROR;
